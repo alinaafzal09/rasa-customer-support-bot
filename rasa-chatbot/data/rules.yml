@@ -1,0 +1,40 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Respond to chatbot feature questions
+  steps:
+    - intent: chatbot_features
+    - action: utter_chatbot_features
+
+- rule: Say hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Ask for Order ID when user reports order not delivered
+  steps:
+  - intent: order_not_delivered
+  - action: utter_order_not_delivered
+
+- rule: Connect to human support when requested
+  steps:
+  - intent: request_human_support
+  - action: utter_request_human_support
+
+- rule: Provide feedback response
+  steps:
+  - intent: provide_feedback
+  - action: utter_thank_you_feedback
+
+

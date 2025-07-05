@@ -1,0 +1,6 @@
+# endpoints.yml
+
+action_endpoint:
+  url: "                     "
+
+# Note: Tracker store, model fetching, and event broker are not used in this project.

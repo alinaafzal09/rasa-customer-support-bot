@@ -1,0 +1,47 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: order issue report flow
+  steps:
+  - intent: report_order_issue
+  - action: utter_ask_order_id
+  - intent: inform
+  - action: action_process_order_issue
+  - intent: check_order_status
+  - action: utter_ask_order_id
+
+- story: refund issue flow
+  steps:
+  - intent: return_refund_issue
+  - action: utter_ask_order_id
+  - intent: inform
+  - action: action_process_refund_issue
+

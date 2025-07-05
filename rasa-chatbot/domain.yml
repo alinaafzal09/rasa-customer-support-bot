@@ -1,0 +1,75 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - chatbot_features
+  - report_order_issue
+  - return_refund_issue
+  - order_not_delivered
+  - request_human_support
+  - escalate_complaint
+  - check_order_status
+  - provide_feedback
+  - inform
+
+slots:
+  order_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity : order_id
+
+entities:
+  - order_id
+
+actions:
+  - action_process_order_issue
+  - action_process_refund_issue
+
+
+responses:
+  utter_greet:
+  - text: "Hello! How can I help you today?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot."
+  
+  utter_chatbot_features:
+  - text: "I can help you track orders, answer FAQs, show product details, and assist with returns or payments."
+
+  utter_ask_order_id:
+    - text: "Please provide your Order ID to proceed."
+
+  utter_order_not_delivered:
+    - text: "I am sorry to hear that. Please share your Order ID so I can check."
+
+  utter_request_human_support:
+    - text: "I am connecting you to a human agent now. Please wait."
+
+  utter_thank_you_feedback:
+  - text: "Thank you for your valuable feedback!"
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
